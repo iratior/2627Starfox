@@ -22,7 +22,7 @@ public class PlayerMugitu : MonoBehaviour
     public Transform model;
     public TrailRenderer leftTrail, rightTrail;
     public GameObject cameraHolder;
-
+    public AudioSource BoostAudio;
 
     private void Start()
     {
@@ -98,6 +98,7 @@ public class PlayerMugitu : MonoBehaviour
             FieldOfView(60f);
             SetCameraZoom(-7, .5f);
             Chromatic(1f);
+            BoostAudio.Play();
         }
         else if (context.canceled)
         {
@@ -107,6 +108,7 @@ public class PlayerMugitu : MonoBehaviour
             FieldOfView(40f);
             SetCameraZoom(0, .5f);
             Chromatic(0f);
+            BoostAudio.Stop();
         }
     }
 
